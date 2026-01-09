@@ -1,0 +1,1301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Classic Cuts Barbershop — Jersey City, NJ</title>
+  <meta name="description" content="Classic Cuts in Jersey City: Premium barbershop offering classic and modern cuts, hot towel shaves, and grooming services. Walk-ins welcome." />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Animate.css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+  <style>
+    :root{
+      --cc-primary:#7C3AED;
+      --cc-secondary:#F7F5FF;
+      --cc-accent:#EC4899;
+
+      --cc-ink:#0b0b0c;
+      --cc-ink-2:#141416;
+      --cc-muted:#6b7280;
+      --cc-border:rgba(255,255,255,.10);
+      --cc-border-dark:rgba(0,0,0,.10);
+      --cc-surface:#1a102a;
+      --cc-surface-2:#0d0a1a;
+      --cc-soft:#F6F3FF;
+      --cc-soft-2:#FAF5FF;
+
+      --radius-xl: 1.25rem;
+      --radius-lg: 1rem;
+      --shadow-soft: 0 18px 50px rgba(0,0,0,.20);
+      --shadow-lift: 0 22px 70px rgba(0,0,0,.22);
+      --shadow-card: 0 14px 40px rgba(0,0,0,.12);
+      --shadow-glow: 0 0 0 1px rgba(255,255,255,.06) inset, 0 18px 60px rgba(0,0,0,.25);
+    }
+
+    html { scroll-behavior: smooth; }
+    body{ /* REQUIRED */
+      font-family: Inter, Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+      color: #0e0f10;
+      background: var(--cc-secondary);
+      overflow-x:hidden; width: 100%; }
+
+    /* Typography */
+    .display-title{
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.02;
+    }
+    .kicker{
+      letter-spacing:.18em;
+      text-transform: uppercase;
+      font-size: .78rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.78);
+    }
+    .text-muted-2{ color: rgba(255,255,255,.74) !important; }
+
+    /* Brand buttons */
+    .btn-cc-primary{
+      --bs-btn-bg: var(--cc-primary);
+      --bs-btn-border-color: var(--cc-primary);
+      --bs-btn-hover-bg: #6D28D9;
+      --bs-btn-hover-border-color: #6D28D9;
+      --bs-btn-color: var(--cc-secondary);
+      --bs-btn-hover-color: var(--cc-secondary);
+      border-radius: 999px;
+      padding: .9rem 1.2rem;
+      box-shadow: 0 10px 30px rgba(124,58,237,.35);
+    }
+    .btn-cc-ghost{
+      --bs-btn-bg: transparent;
+      --bs-btn-border-color: rgba(255,255,255,.45);
+      --bs-btn-hover-bg: rgba(255,255,255,.10);
+      --bs-btn-hover-border-color: rgba(255,255,255,.55);
+      --bs-btn-color: var(--cc-secondary);
+      --bs-btn-hover-color: var(--cc-secondary);
+      border-radius: 999px;
+      padding: .9rem 1.2rem;
+      backdrop-filter: blur(8px);
+    }
+    .btn-cc-outline-dark{
+      --bs-btn-bg: transparent;
+      --bs-btn-border-color: rgba(124,58,237,.35);
+      --bs-btn-hover-bg: rgba(124,58,237,.08);
+      --bs-btn-hover-border-color: rgba(124,58,237,.5);
+      --bs-btn-color: #1a1b1d;
+      --bs-btn-hover-color: #1a1b1d;
+      border-radius: 999px;
+      padding: .85rem 1.15rem;
+    }
+
+    /* Navbar */
+    .navbar{
+      transition: background-color .25s ease, box-shadow .25s ease, border-color .25s ease;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+    .navbar.navbar-dark{
+      background: linear-gradient(90deg, rgba(124,58,237,.65), rgba(236,72,153,.65));
+      backdrop-filter: blur(12px);
+    }
+    .navbar.navbar-scrolled{
+      background: linear-gradient(90deg, rgba(124,58,237,.92), rgba(236,72,153,.92)) !important;
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+      border-bottom-color: rgba(255,255,255,.10);
+    }
+    .nav-link{
+      font-weight: 600;
+      opacity: .92;
+    }
+    .nav-link:hover{ opacity: 1; }
+
+    /* Hero */
+    .hero{
+      min-height: 100vh;
+      position: relative;
+      color: #fff;
+      overflow: hidden;
+      background:
+        radial-gradient(1200px 600px at 20% 10%, rgba(124,58,237,.25), transparent 55%),
+        radial-gradient(900px 600px at 85% 15%, rgba(236,72,153,.22), transparent 55%),
+        linear-gradient(180deg, #1a102a, #0d0a1a);
+    }
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        linear-gradient(180deg, rgba(30,10,60,.82) 0%, rgba(24,9,48,.80) 55%, rgba(13,10,26,.90) 100%),
+        url('https://images.unsplash.com/photo-1759142016096-a9d1a5ebcc09?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4Mzg5MDV8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBiYXJiZXJzaG9wfGVufDF8MHx8fDE3Njc5NDQ2NDJ8MA&ixlib=rb-4.1.0&q=80&w=1080');
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.02);
+      filter: saturate(1.05) contrast(1.05);
+    }
+    .hero > *{ position:relative; z-index:1; }
+
+    .hero-card{
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow-glow);
+      backdrop-filter: blur(14px);
+    }
+    .badge-trust{
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.92);
+      border-radius: 999px;
+      padding: .45rem .75rem;
+      font-weight: 600;
+      font-size: .9rem;
+      display: inline-flex;
+      gap: .5rem;
+      align-items: center;
+      min-height: 44px; /* touch target */
+    }
+
+    /* Section rhythm */
+    .section-pad{ padding: 5rem 0; }
+    @media (min-width: 992px){
+      .section-pad{ padding: 6.5rem 0; }
+    }
+
+    /* Cards */
+    .cc-card{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(0,0,0,.08);
+      box-shadow: var(--shadow-card);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+      overflow: hidden;
+      background: #fff;
+    }
+    .cc-card:hover{
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lift);
+      border-color: rgba(0,0,0,.14);
+    }
+    .cc-card .icon-pill{
+      width: 52px;
+      height: 52px;
+      border-radius: 16px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--cc-primary);
+      color: #fff;
+      box-shadow: 0 18px 45px rgba(124,58,237,.28);
+    }
+
+    .feature-list{
+      padding-left: 1.05rem;
+      margin-bottom: 0;
+    }
+    .feature-list li{
+      margin: .35rem 0;
+      color: #111;
+      opacity: .88;
+    }
+
+    /* Split image panels */
+    .image-panel{
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      position: relative;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,.12);
+      background: #0d0a1a;
+      min-height: 320px;
+    }
+    .image-panel img{
+      width:100%;
+      height:100%;
+      object-fit: cover;
+      display:block;
+      filter: contrast(1.05) saturate(1.05);
+      transform: scale(1.02);
+    }
+    .image-panel .panel-overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(30,10,60,.25) 0%, rgba(13,10,26,.70) 100%);
+    }
+    .image-panel .panel-badge{
+      position:absolute;
+      left: 1rem;
+      bottom: 1rem;
+      right: 1rem;
+      padding: .9rem 1rem;
+      border-radius: 18px;
+      background: rgba(0,0,0,.58);
+      border: 1px solid rgba(255,255,255,.14);
+      color: rgba(255,255,255,.92);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Dark section */
+    .section-dark{
+      background: radial-gradient(1200px 600px at 15% 0%, rgba(236,72,153,.10), transparent 55%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(124,58,237,.12), transparent 55%),
+                  linear-gradient(180deg, #1a102a, #0d0a1a);
+      color: #fff;
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+    .section-dark .cc-card{
+      background: rgba(255,255,255,.06);
+      border-color: rgba(255,255,255,.10);
+      color: #fff;
+      box-shadow: 0 18px 55px rgba(0,0,0,.35);
+    }
+    .section-dark .cc-card:hover{
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 26px 70px rgba(0,0,0,.50);
+    }
+    .section-dark .feature-list li{ color: rgba(255,255,255,.88); }
+    .section-dark .text-secondary-contrast{ color: rgba(255,255,255,.78); }
+
+    /* Stats */
+    .stat-tile{
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.06);
+      padding: 1.15rem;
+      height: 100%;
+    }
+    .stat-tile .stat-label{ color: rgba(255,255,255,.70); font-weight: 600; font-size: .92rem; }
+    .stat-tile .stat-value{ font-weight: 800; letter-spacing: -0.02em; font-size: 1.6rem; }
+
+    /* Gallery */
+    .gallery-tile{
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid rgba(0,0,0,.10);
+      box-shadow: 0 14px 40px rgba(0,0,0,.14);
+      position: relative;
+      background: #0d0a1a;
+      min-height: 220px;
+    }
+    .gallery-tile img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+      transition: transform .35s ease, filter .35s ease;
+      filter: contrast(1.03) saturate(1.05);
+    }
+    .gallery-tile:hover img{
+      transform: scale(1.06);
+      filter: contrast(1.06) saturate(1.1);
+    }
+    .gallery-tile .g-overlay{
+      position:absolute;
+      inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.00) 20%, rgba(124,58,237,.55) 100%);
+      opacity: .95;
+    }
+    .gallery-tile .g-label{
+      position:absolute;
+      left: 1rem;
+      bottom: 1rem;
+      right: 1rem;
+      color: rgba(255,255,255,.92);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      text-shadow: 0 10px 30px rgba(0,0,0,.55);
+    }
+
+    /* Reviews */
+    .review-card{
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(0,0,0,.08);
+      background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+      box-shadow: 0 16px 45px rgba(0,0,0,.10);
+      height: 100%;
+    }
+    .stars{
+      letter-spacing: .1em;
+      color: #111;
+    }
+    .quote{
+      color: #111;
+      opacity: .88;
+      font-size: 1.02rem;
+      line-height: 1.6;
+    }
+
+    /* Contact */
+    .contact-surface{
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: linear-gradient(180deg, #1a102a, #0d0a1a);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.10);
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+    }
+    .contact-surface .left{
+      background:
+        radial-gradient(900px 500px at 15% 0%, rgba(124,58,237,.14), transparent 60%),
+        radial-gradient(800px 450px at 85% 20%, rgba(236,72,153,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .contact-link{
+      display:flex;
+      gap:.75rem;
+      align-items:flex-start;
+      text-decoration:none;
+      color: rgba(255,255,255,.90);
+      border-radius: 16px;
+      padding: .9rem 1rem;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      min-height: 44px;
+    }
+    .contact-link:hover{
+      color: #fff;
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* Focus states */
+    a:focus-visible, button:focus-visible{
+      outline: 3px solid rgba(255,255,255,.35);
+      outline-offset: 3px;
+      border-radius: 14px;
+    }
+    .btn:focus-visible{
+      outline: 3px solid rgba(255,255,255,.35);
+      outline-offset: 3px;
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body style="width: 100%;">
+  <!-- Header -->
+  <header class="sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container py-2">
+        <a class="navbar-brand d-flex align-items-center gap-2 fw-bold" href="#top" aria-label="Classic Cuts Barbershop home">
+          <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:40px;height:40px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+            <i class="bi bi-scissors" aria-hidden="true"></i>
+          </span>
+          <span style="letter-spacing:-0.02em;">Classic Cuts</span>
+        </a>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navPrimary" aria-controls="navPrimary" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navPrimary">
+          <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 gap-lg-2 text-center">
+            <li class="nav-item"><a class="nav-link" href="#jersey-city">Jersey City</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+
+          <div class="d-grid d-lg-flex gap-2 align-items-lg-center">
+            <a class="btn btn-cc-ghost" href="tel:+12015558234" aria-label="Call Classic Cuts at (201) 555-8234">
+              <i class="bi bi-telephone me-2" aria-hidden="true"></i>
+              Call Now
+            </a>
+            <a class="btn btn-cc-primary" href="#contact">
+              Get Quote
+              <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero d-flex align-items-center">
+      <div class="container py-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <div class="animate__animated animate__fadeInUp">
+              <div class="kicker mb-3">Classic Cuts Barbershop</div>
+              <h1 class="display-title display-5 mb-3">
+                Precision cuts. Timeless style.<br class="d-none d-md-block"> Jersey City, elevated.
+              </h1>
+              <p class="lead mb-4 text-muted-2" style="max-width: 46rem;">
+                Premium barbershop offering classic and modern cuts, hot towel shaves, and grooming services. Walk-ins welcome, appointments preferred.
+              </p>
+
+              <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 mb-4">
+                <a class="btn btn-cc-primary" href="tel:+12015558234">
+                  <i class="bi bi-telephone me-2" aria-hidden="true"></i>
+                  (201) 555-8234
+                </a>
+                <a class="btn btn-cc-ghost" href="#gallery">
+                  View Our Work
+                  <i class="bi bi-images ms-2" aria-hidden="true"></i>
+                </a>
+              </div>
+
+              <div class="d-flex flex-wrap gap-2">
+                <span class="badge-trust">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i> 5-Star Rated
+                </span>
+                <span class="badge-trust">
+                  <i class="bi bi-geo-alt" aria-hidden="true"></i> Jersey City, NJ
+                </span>
+                <span class="badge-trust">
+                  <i class="bi bi-calendar2-check" aria-hidden="true"></i> Since 2015
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="hero-card p-4 p-lg-4 animate__animated animate__fadeInUp animate__delay-1s">
+              <div class="d-flex align-items-start justify-content-between gap-3">
+                <div>
+                  <div class="fw-bold h5 mb-1" style="letter-spacing:-0.02em;">Quick Details</div>
+                  <div class="small text-muted-2">Walk-ins welcome • Appointments preferred</div>
+                </div>
+                <span class="badge-trust" style="background:rgba(255,255,255,.08);">
+                  <i class="bi bi-shield-check" aria-hidden="true"></i> Premium Care
+                </span>
+              </div>
+
+              <hr class="my-4" style="border-color: rgba(255,255,255,.14);" />
+
+              <div class="d-grid gap-3">
+                <a class="contact-link" href="https://maps.google.com/?q=456%20Newark%20Avenue%2C%20Jersey%20City%2C%20NJ%2007302" target="_blank" rel="noopener">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">456 Newark Avenue</span>
+                    <span class="small text-muted-2">Jersey City, NJ 07302</span>
+                  </span>
+                </a>
+
+                <a class="contact-link" href="mailto:marcus@classiccutsdemo.com">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">Email</span>
+                    <span class="small text-muted-2">marcus@classiccutsdemo.com</span>
+                  </span>
+                </a>
+
+                <div class="contact-link" role="group" aria-label="Business hours">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-clock" aria-hidden="true"></i>
+                  </span>
+                  <span class="small text-muted-2">
+                    <span class="fw-semibold d-block text-white">Hours</span>
+                    Mon–Fri: 9:00am–7:00pm • Sat: 8:00am–6:00pm • Sun: 10:00am–4:00pm
+                  </span>
+                </div>
+
+                <a class="btn btn-cc-ghost w-100" href="#contact" style="min-height:44px;">
+                  Request a Free Estimate
+                  <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="py-4" style="background:linear-gradient(90deg, #5B21B6, #BE185D); border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06);">
+      <div class="container">
+        <div class="row g-3 align-items-center">
+          <div class="col-lg-4">
+            <div class="text-white fw-bold" style="letter-spacing:-0.02em;">
+              A barbershop experience built on craft and consistency.
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+              <span class="badge-trust">
+                <i class="bi bi-scissors" aria-hidden="true"></i> Classic + Modern Techniques
+              </span>
+              <span class="badge-trust">
+                <i class="bi bi-chat-square-heart" aria-hidden="true"></i> Consultative Approach
+              </span>
+              <span class="badge-trust">
+                <i class="bi bi-droplet" aria-hidden="true"></i> Hot Towel Shaves
+              </span>
+              <span class="badge-trust">
+                <i class="bi bi-door-open" aria-hidden="true"></i> Walk-Ins Welcome
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Classic Cuts in Jersey City (REQUIRED) -->
+    <section id="jersey-city" class="section-pad" style="background:var(--cc-soft-2);">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6">
+            <div class="image-panel">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944633/fcsuploads/photo-classic-cuts-barbershop-1767944632392-0.png" alt="Classic Cuts Barbershop in Jersey City interior" />
+              <div class="panel-overlay" aria-hidden="true"></div>
+              <div class="panel-badge">
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                  <div class="fw-semibold">Classic Cuts in Jersey City</div>
+                  <div class="small" style="color:rgba(255,255,255,.78);">
+                    <i class="bi bi-geo-alt me-1" aria-hidden="true"></i> Newark Ave
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="mb-3 text-uppercase fw-bold" style="letter-spacing:.18em; font-size:.78rem; color:var(--cc-accent);">
+              Jersey City • Premium Grooming
+            </div>
+            <h2 class="display-title h1 mb-3" style="color:var(--cc-primary);">
+              A premium barbershop—classic culture, modern finish.
+            </h2>
+            <p class="lead mb-4" style="color:#1a1b1d; max-width: 52rem;">
+              Premium barbershop offering classic and modern cuts, hot towel shaves, and grooming services. Walk-ins welcome.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="cc-card p-4 h-100">
+                  <div class="d-flex gap-3">
+                    <div class="icon-pill flex-shrink-0"><i class="bi bi-person-badge" aria-hidden="true"></i></div>
+                    <div>
+                      <div class="fw-bold mb-1" style="letter-spacing:-0.01em;">Consultation First</div>
+                      <div class="small text-secondary" style="--bs-text-opacity:1; color:#4b5563;">
+                        We listen, align on the look, then execute with precision.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="cc-card p-4 h-100">
+                  <div class="d-flex gap-3">
+                    <div class="icon-pill flex-shrink-0"><i class="bi bi-check2-circle" aria-hidden="true"></i></div>
+                    <div>
+                      <div class="fw-bold mb-1" style="letter-spacing:-0.01em;">Detail-Driven Finish</div>
+                      <div class="small text-secondary" style="--bs-text-opacity:1; color:#4b5563;">
+                        Clean lines, balanced shape, and a finish that lasts.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 mt-4">
+              <a class="btn btn-cc-primary" href="#services">
+                Explore Services <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+              </a>
+              <a class="btn btn-cc-outline-dark" href="tel:+12015558234">
+                Call (201) 555-8234
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="section-pad section-dark">
+      <div class="container">
+        <div class="row align-items-end g-3 mb-4 mb-lg-5">
+          <div class="col-lg-7">
+            <div class="kicker mb-2">Services</div>
+            <h2 class="display-title h1 mb-2">Grooming, refined—built around your style.</h2>
+            <p class="mb-0 text-secondary-contrast" style="max-width: 52rem;">
+              Choose the service that matches your moment—classic structure, modern texture, or a clean shave with a luxury finish.
+            </p>
+          </div>
+          <div class="col-lg-5 d-flex justify-content-lg-end">
+            <a class="btn btn-cc-ghost" href="#contact">
+              Get a Recommendation <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-scissors" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Signature</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Classic Cuts</h3>
+              <p class="mb-3 text-secondary-contrast">
+                Timeless shapes with clean structure—tailored to face shape and lifestyle.
+              </p>
+              <ul class="feature-list">
+                <li>Consultation + shape plan</li>
+                <li>Precision taper & blend</li>
+                <li>Neck & edge cleanup</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-lightning-charge" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Modern</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Modern Cuts</h3>
+              <p class="mb-3 text-secondary-contrast">
+                Contemporary silhouettes with texture, movement, and a polished finish.
+              </p>
+              <ul class="feature-list">
+                <li>Texture & styling guidance</li>
+                <li>Fade & detail work</li>
+                <li>Finish checks in natural light</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-droplet" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Luxury</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Hot Towel Shaves</h3>
+              <p class="mb-3 text-secondary-contrast">
+                A classic ritual with modern comfort—smooth results and calm skin.
+              </p>
+              <ul class="feature-list">
+                <li>Hot towel prep</li>
+                <li>Close, careful shave</li>
+                <li>Soothing finish</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-stars" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Detail</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Beard & Grooming</h3>
+              <p class="mb-3 text-secondary-contrast">
+                Shape, clean lines, and balanced proportions for a sharp everyday look.
+              </p>
+              <ul class="feature-list">
+                <li>Beard shaping</li>
+                <li>Line-up & cleanup</li>
+                <li>Style maintenance tips</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Care</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Precision Finishing</h3>
+              <p class="mb-3 text-secondary-contrast">
+                The difference is in the details—edges, symmetry, and lasting structure.
+              </p>
+              <ul class="feature-list">
+                <li>Symmetry checks</li>
+                <li>Clean edges</li>
+                <li>Consistent results</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="cc-card p-4 h-100">
+              <div class="d-flex align-items-start justify-content-between">
+                <span class="icon-pill"><i class="bi bi-door-open" aria-hidden="true"></i></span>
+                <span class="badge-trust" style="min-height:auto;padding:.35rem .6rem;font-size:.82rem;">Flexible</span>
+              </div>
+              <h3 class="h4 mt-3 mb-2 fw-bold" style="letter-spacing:-0.02em;">Walk-Ins Welcome</h3>
+              <p class="mb-3 text-secondary-contrast">
+                Stop in when you can—appointments preferred for minimal wait.
+              </p>
+              <ul class="feature-list">
+                <li>Quick check-in</li>
+                <li>Clear expectations</li>
+                <li>Premium experience</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About / Why Us (REQUIRED About + Stats Grid) -->
+    <section id="about" class="section-pad" style="background: #1a102a; color:#fff;">
+      <div class="container">
+        <div class="row align-items-center g-4 g-lg-5">
+          <div class="col-lg-6 order-2 order-lg-1">
+            <div class="mb-2 kicker">About</div>
+            <h2 class="display-title h1 mb-3">Built on craft. Defined by culture.</h2>
+            <p class="mb-4" style="color:rgba(255,255,255,.78); max-width: 52rem;">
+              Since opening our doors in 2015, Classic Cuts Barbershop has become Jersey City's go-to destination for quality cuts and classic barbershop culture. Our skilled barbers are trained in both classic and contemporary techniques.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-12 col-sm-6">
+                <div class="stat-tile">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <div class="stat-label">Established</div>
+                    <i class="bi bi-award" aria-hidden="true" style="color:rgba(255,255,255,.70);"></i>
+                  </div>
+                  <div class="stat-value">2015</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="stat-tile">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <div class="stat-label">Location</div>
+                    <i class="bi bi-geo-alt" aria-hidden="true" style="color:rgba(255,255,255,.70);"></i>
+                  </div>
+                  <div class="stat-value">Jersey City</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="stat-tile">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <div class="stat-label">Signature</div>
+                    <i class="bi bi-scissors" aria-hidden="true" style="color:rgba(255,255,255,.70);"></i>
+                  </div>
+                  <div class="stat-value">Precision</div>
+                </div>
+              </div>
+              <div class="col-12 col-sm-6">
+                <div class="stat-tile">
+                  <div class="d-flex align-items-center justify-content-between mb-2">
+                    <div class="stat-label">Experience</div>
+                    <i class="bi bi-stars" aria-hidden="true" style="color:rgba(255,255,255,.70);"></i>
+                  </div>
+                  <div class="stat-value">Premium</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="d-flex flex-column flex-sm-row gap-2 gap-sm-3 mt-4">
+              <a class="btn btn-cc-primary" href="#reviews">See Reviews <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+              <a class="btn btn-cc-ghost" href="#contact">Contact Us</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="image-panel" style="min-height: 420px;">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944634/fcsuploads/photo-classic-cuts-barbershop-1767944634984-0.png" alt="Classic Cuts Barbershop team and work environment" />
+              <div class="panel-overlay" aria-hidden="true"></div>
+              <div class="panel-badge">
+                <div class="fw-semibold">Classic Cuts Barbershop</div>
+                <div class="small" style="color:rgba(255,255,255,.78);">
+                  Trained in classic and contemporary techniques.
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-3 mt-3">
+              <div class="col-12 col-md-6">
+                <div class="cc-card p-4 h-100" style="background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10); color:#fff;">
+                  <div class="d-flex gap-3">
+                    <div class="icon-pill flex-shrink-0" style="background:#fff;color:#000;">
+                      <i class="bi bi-chat-square-text" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold mb-1" style="letter-spacing:-0.01em;">Clear Communication</div>
+                      <div class="small" style="color:rgba(255,255,255,.78);">We align on your look before the first cut.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6">
+                <div class="cc-card p-4 h-100" style="background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.10); color:#fff;">
+                  <div class="d-flex gap-3">
+                    <div class="icon-pill flex-shrink-0" style="background:#fff;color:#000;">
+                      <i class="bi bi-eye" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                      <div class="fw-bold mb-1" style="letter-spacing:-0.01em;">Detail Obsession</div>
+                      <div class="small" style="color:rgba(255,255,255,.78);">Edges, blend, and finish checks—every time.</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Work Gallery (REQUIRED) -->
+    <section id="gallery" class="section-pad" style="background: var(--cc-soft);">
+      <div class="container">
+        <div class="row align-items-end g-3 mb-4 mb-lg-5">
+          <div class="col-lg-7">
+            <div class="text-uppercase fw-bold mb-2" style="letter-spacing:.18em; font-size:.78rem; color:var(--cc-accent);">Portfolio</div>
+            <h2 class="display-title h1 mb-2" style="color:var(--cc-primary);">Our Work Gallery</h2>
+            <p class="mb-0" style="color:#374151; max-width: 54rem;">
+              A snapshot of our finish—clean lines, balanced shape, and styles that look sharp beyond the chair.
+            </p>
+          </div>
+          <div class="col-lg-5 d-flex justify-content-lg-end">
+            <a class="btn btn-cc-outline-dark" href="#contact">Book / Inquire <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-md-6 col-lg-4">
+            <a class="gallery-tile d-block" href="tel:+12015558234" aria-label="Call to book after viewing gallery image 1">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944635/fcsuploads/photo-classic-cuts-barbershop-1767944635973-0.png" alt="Haircut result and barbershop work gallery image 1" />
+              <div class="g-overlay" aria-hidden="true"></div>
+              <div class="g-label">Crisp finish • Natural texture</div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a class="gallery-tile d-block" href="tel:+12015558234" aria-label="Call to book after viewing gallery image 2">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944636/fcsuploads/photo-classic-cuts-barbershop-1767944636827-1.png" alt="Haircut result and barbershop work gallery image 2" />
+              <div class="g-overlay" aria-hidden="true"></div>
+              <div class="g-label">Balanced shape • Clean lines</div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <a class="gallery-tile d-block" href="tel:+12015558234" aria-label="Call to book after viewing gallery image 3">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944637/fcsuploads/photo-classic-cuts-barbershop-1767944637738-2.png" alt="Haircut result and barbershop work gallery image 3" />
+              <div class="g-overlay" aria-hidden="true"></div>
+              <div class="g-label">Modern profile • Polished finish</div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <a class="gallery-tile d-block" href="tel:+12015558234" aria-label="Call to book after viewing gallery image 4" style="min-height: 260px;">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944638/fcsuploads/photo-classic-cuts-barbershop-1767944638668-3.png" alt="Haircut result and barbershop work gallery image 4" />
+              <div class="g-overlay" aria-hidden="true"></div>
+              <div class="g-label">Classic barbershop culture • Premium grooming</div>
+            </a>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <a class="gallery-tile d-block" href="tel:+12015558234" aria-label="Call to book after viewing gallery image 5" style="min-height: 260px;">
+              <img src="https://res.cloudinary.com/dc7zm5vn6/image/upload/v1767944638/fcsuploads/photo-classic-cuts-barbershop-1767944639564-4.png" alt="Haircut result and barbershop work gallery image 5" />
+              <div class="g-overlay" aria-hidden="true"></div>
+              <div class="g-label">Detail work • Built to last</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Social Proof / Reviews (REQUIRED) -->
+    <section id="reviews" class="section-pad" style="background:#ffffff;">
+      <div class="container">
+        <div class="row align-items-end g-3 mb-4 mb-lg-5">
+          <div class="col-lg-7">
+            <div class="text-uppercase fw-bold mb-2" style="letter-spacing:.18em; font-size:.78rem; color:var(--cc-accent);">What Our Customers Say</div>
+            <h2 class="display-title h1 mb-2" style="color:var(--cc-primary);">Trusted by Jersey City regulars.</h2>
+            <p class="mb-0" style="color:#374151; max-width: 54rem;">
+              Real feedback from customers who come back for consistency, detail, and a premium barbershop experience.
+            </p>
+          </div>
+          <div class="col-lg-5 d-flex justify-content-lg-end">
+            <a class="btn btn-cc-outline-dark" href="#contact">Talk to Us <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i></a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 col-lg-4">
+            <article class="review-card p-4 p-lg-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:#7C3AED;color:#fff;">
+                  <i class="bi bi-quote" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p class="quote mb-4">“Best haircut I have ever had! The attention to detail is incredible.”</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold">Marcus J.</div>
+                  <div class="small text-secondary" style="--bs-text-opacity:1; color:#6b7280;">Jersey City, NJ</div>
+                </div>
+                <span class="small fw-semibold" style="color:#111; opacity:.75;">Verified</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="review-card p-4 p-lg-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:#7C3AED;color:#fff;">
+                  <i class="bi bi-quote" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p class="quote mb-4">“Great atmosphere and skilled barbers. They really listen to what you want.”</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold">David K.</div>
+                  <div class="small text-secondary" style="--bs-text-opacity:1; color:#6b7280;">Jersey City, NJ</div>
+                </div>
+                <span class="small fw-semibold" style="color:#111; opacity:.75;">Verified</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-lg-4">
+            <article class="review-card p-4 p-lg-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <div class="stars" aria-label="5 out of 5 stars">
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                  <i class="bi bi-star-fill" aria-hidden="true"></i>
+                </div>
+                <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:#7C3AED;color:#fff;">
+                  <i class="bi bi-quote" aria-hidden="true"></i>
+                </span>
+              </div>
+              <p class="quote mb-4">“Professional service and fair prices. This place is the real deal.”</p>
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold">Tony M.</div>
+                  <div class="small text-secondary" style="--bs-text-opacity:1; color:#6b7280;">Jersey City, NJ</div>
+                </div>
+                <span class="small fw-semibold" style="color:#111; opacity:.75;">Verified</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ready to Get Started? (REQUIRED CTA) -->
+    <section id="get-started" class="section-pad section-dark">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <div class="kicker mb-2">Ready to Get Started?</div>
+            <h2 class="display-title h1 mb-2">Show up sharp—every time.</h2>
+            <p class="mb-0 text-secondary-contrast" style="max-width: 54rem;">
+              Call to book or stop in—walk-ins are welcome. For the smoothest experience, appointments are preferred.
+            </p>
+          </div>
+          <div class="col-lg-4 d-grid d-sm-flex justify-content-lg-end gap-2">
+            <a class="btn btn-cc-primary" href="tel:+12015558234" style="min-height:44px;">
+              Book Appointment <i class="bi bi-telephone ms-2" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn-cc-ghost" href="#contact" style="min-height:44px;">
+              Contact Details <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact / CTA (REQUIRED) -->
+    <section id="contact" class="section-pad" style="background: #ffffff;">
+      <div class="container">
+        <div class="row align-items-end g-3 mb-4 mb-lg-5">
+          <div class="col-lg-7">
+            <div class="text-uppercase fw-bold mb-2" style="letter-spacing:.18em; font-size:.78rem; color:var(--cc-accent);">Contact Us</div>
+            <h2 class="display-title h1 mb-2" style="color:var(--cc-primary);">Call, email, or drop by.</h2>
+            <p class="mb-0" style="color:#374151; max-width: 54rem;">
+              Call us today at (201) 555-8234 or fill out the form for a free estimate.
+            </p>
+          </div>
+          <div class="col-lg-5 d-flex justify-content-lg-end">
+            <a class="btn btn-cc-outline-dark" href="tel:+12015558234">
+              Call Now <i class="bi bi-telephone ms-2" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-surface">
+          <div class="row g-0">
+            <div class="col-lg-6 left p-4 p-lg-5">
+              <div class="d-flex align-items-center gap-2 mb-3">
+                <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:46px;height:46px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                  <i class="bi bi-scissors" aria-hidden="true"></i>
+                </span>
+                <div>
+                  <div class="fw-bold h5 mb-0" style="letter-spacing:-0.02em;">Classic Cuts Barbershop</div>
+                  <div class="small" style="color:rgba(255,255,255,.72);">Jersey City, NJ</div>
+                </div>
+              </div>
+
+              <div class="d-grid gap-3 mt-4">
+                <a class="contact-link" href="tel:+12015558234">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-telephone" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">Phone</span>
+                    <span class="small text-muted-2">(201) 555-8234</span>
+                  </span>
+                </a>
+
+                <a class="contact-link" href="mailto:marcus@classiccutsdemo.com">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">Email</span>
+                    <span class="small text-muted-2">marcus@classiccutsdemo.com</span>
+                  </span>
+                </a>
+
+                <a class="contact-link" href="https://maps.google.com/?q=456%20Newark%20Avenue%2C%20Jersey%20City%2C%20NJ%2007302" target="_blank" rel="noopener">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">Address</span>
+                    <span class="small text-muted-2">456 Newark Avenue, Jersey City, NJ 07302</span>
+                  </span>
+                </a>
+
+                <div class="contact-link" role="group" aria-label="Business hours">
+                  <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:44px;height:44px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+                    <i class="bi bi-clock" aria-hidden="true"></i>
+                  </span>
+                  <span>
+                    <span class="fw-semibold d-block">Business Hours</span>
+                    <span class="small text-muted-2 d-block">Monday–Friday: 9:00am–7:00pm</span>
+                    <span class="small text-muted-2 d-block">Saturday: 8:00am–6:00pm</span>
+                    <span class="small text-muted-2 d-block">Sunday: 10:00am–4:00pm</span>
+                    <span class="small text-muted-2 d-block mt-1">Walk-ins welcome, appointments preferred</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-6 p-4 p-lg-5" style="background: linear-gradient(180deg, #1a102a, #0d0a1a);">
+              <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                <div>
+                  <div class="fw-bold h5 mb-1" style="letter-spacing:-0.02em; color:#fff;">Request a Free Estimate</div>
+                  <div class="small" style="color:rgba(255,255,255,.72);">
+                    No backend—use email or call. We’ll respond as soon as possible.
+                  </div>
+                </div>
+                <span class="badge-trust" style="min-height:auto; padding:.35rem .6rem; font-size:.82rem;">
+                  <i class="bi bi-shield-check" aria-hidden="true"></i> High-Touch
+                </span>
+              </div>
+
+              <!-- Mailto "form" (no backend) -->
+              <form id="estimateForm" class="mt-4" novalidate>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label for="name" class="form-label" style="color:rgba(255,255,255,.86);">Your Name</label>
+                    <input id="name" class="form-control form-control-lg" type="text" placeholder="Full name" autocomplete="name"
+                      style="border-radius: 16px; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color:#fff; min-height:44px;">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="phone" class="form-label" style="color:rgba(255,255,255,.86);">Phone (optional)</label>
+                    <input id="phone" class="form-control form-control-lg" type="tel" placeholder="(201) ___-____" autocomplete="tel"
+                      style="border-radius: 16px; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color:#fff; min-height:44px;">
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label for="service" class="form-label" style="color:rgba(255,255,255,.86);">Service</label>
+                    <select id="service" class="form-select form-select-lg"
+                      style="border-radius: 16px; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color:#fff; min-height:44px;">
+                      <option selected>Classic cut</option>
+                      <option>Modern cut</option>
+                      <option>Hot towel shave</option>
+                      <option>Beard & grooming</option>
+                      <option>Not sure — recommend</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label" style="color:rgba(255,255,255,.86);">Details</label>
+                    <textarea id="message" class="form-control form-control-lg" rows="4" placeholder="Tell us the look you're going for, timing, and any preferences."
+                      style="border-radius: 16px; background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.14); color:#fff;"></textarea>
+                  </div>
+                  <div class="col-12 d-grid d-sm-flex gap-2">
+                    <button type="submit" class="btn btn-cc-primary flex-fill" style="min-height:44px;">
+                      Email Request <i class="bi bi-send ms-2" aria-hidden="true"></i>
+                    </button>
+                    <a class="btn btn-cc-ghost flex-fill" href="tel:+12015558234" style="min-height:44px;">
+                      Call Instead <i class="bi bi-telephone ms-2" aria-hidden="true"></i>
+                    </a>
+                  </div>
+                  <div class="col-12">
+                    <div class="small" style="color:rgba(255,255,255,.62);">
+                      By contacting us, you agree to be reached at the phone/email provided. Walk-ins welcome; appointments preferred.
+                    </div>
+                  </div>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5" style="background:linear-gradient(180deg,#120a24,#0d0a1a); color:#fff; border-top:1px solid rgba(255,255,255,.08);">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <span class="d-inline-flex align-items-center justify-content-center rounded-4" style="width:42px;height:42px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14);">
+              <i class="bi bi-scissors" aria-hidden="true"></i>
+            </span>
+            <div class="fw-bold h5 mb-0" style="letter-spacing:-0.02em;">Classic Cuts Barbershop</div>
+          </div>
+          <p class="mb-0" style="color:rgba(255,255,255,.72); max-width: 28rem;">
+            Premium grooming in Jersey City—classic barbershop culture with modern technique.
+          </p>
+        </div>
+
+        <div class="col-6 col-lg-2">
+          <div class="fw-semibold mb-2">Explore</div>
+          <ul class="list-unstyled mb-0 d-grid gap-2">
+            <li><a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="#services">Services</a></li>
+            <li><a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="#about">About</a></li>
+            <li><a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="#gallery">Gallery</a></li>
+            <li><a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="#reviews">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-lg-3">
+          <div class="fw-semibold mb-2">Contact</div>
+          <ul class="list-unstyled mb-0 d-grid gap-2">
+            <li>
+              <a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="tel:+12015558234">
+                <i class="bi bi-telephone me-2" aria-hidden="true"></i>(201) 555-8234
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="mailto:marcus@classiccutsdemo.com">
+                <i class="bi bi-envelope me-2" aria-hidden="true"></i>marcus@classiccutsdemo.com
+              </a>
+            </li>
+            <li>
+              <a class="text-decoration-none" style="color:rgba(255,255,255,.72);" href="https://maps.google.com/?q=456%20Newark%20Avenue%2C%20Jersey%20City%2C%20NJ%2007302" target="_blank" rel="noopener">
+                <i class="bi bi-geo-alt me-2" aria-hidden="true"></i>456 Newark Avenue, Jersey City, NJ 07302
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3">
+          <div class="fw-semibold mb-2">Hours</div>
+          <div class="small" style="color:rgba(255,255,255,.72); line-height:1.7;">
+            Monday–Friday: 9:00am–7:00pm<br>
+            Saturday: 8:00am–6:00pm<br>
+            Sunday: 10:00am–4:00pm<br>
+            Walk-ins welcome, appointments preferred
+          </div>
+        </div>
+      </div>
+
+      <hr class="my-4" style="border-color: rgba(255,255,255,.10);" />
+
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2">
+        <div class="small" style="color:rgba(255,255,255,.62);">
+          © <span id="year"></span> Classic Cuts Barbershop. All rights reserved.
+        </div>
+        <div class="small" style="color:rgba(255,255,255,.62);">
+          License # <span style="color:rgba(255,255,255,.70);">—</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (required for navbar collapse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Sticky navbar enhance on scroll
+    const nav = document.querySelector('.navbar');
+    const onScroll = () => {
+      if (!nav) return;
+      const scrolled = window.scrollY > 10;
+      nav.classList.toggle('navbar-scrolled', scrolled);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // Smooth scroll + close mobile menu on click (Bootstrap native collapse)
+    const navCollapseEl = document.getElementById('navPrimary');
+    const bsCollapse = navCollapseEl ? bootstrap.Collapse.getOrCreateInstance(navCollapseEl, { toggle: false }) : null;
+
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a) return;
+
+      const href = a.getAttribute('href');
+      if (!href || href === '#') return;
+
+      const target = document.querySelector(href);
+      if (!target) return;
+
+      e.preventDefault();
+
+      const y = target.getBoundingClientRect().top + window.pageYOffset - 86; // account for sticky header
+      window.scrollTo({ top: y, behavior: 'smooth' });
+
+      // Close mobile menu if open
+      if (navCollapseEl && navCollapseEl.classList.contains('show') && bsCollapse) {
+        bsCollapse.hide();
+      }
+    });
+
+    // "Form" -> mailto (no backend)
+    const form = document.getElementById('estimateForm');
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = (document.getElementById('name')?.value || '').trim();
+      const phone = (document.getElementById('phone')?.value || '').trim();
+      const service = (document.getElementById('service')?.value || '').trim();
+      const message = (document.getElementById('message')?.value || '').trim();
+
+      const subject = encodeURIComponent('Free Estimate Request — Classic Cuts Barbershop');
+      const body = encodeURIComponent(
+        `Name: ${name || '(not provided)'}\n` +
+        `Phone: ${phone || '(not provided)'}\n` +
+        `Service: ${service || '(not provided)'}\n\n` +
+        `Details:\n${message || '(not provided)'}\n\n` +
+        `Preferred: Walk-in or appointment (please specify)\n`
+      );
+
+      window.location.href = `mailto:marcus@classiccutsdemo.com?subject=${subject}&body=${body}`;
+    });
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
